@@ -15,12 +15,11 @@
 
     lint = {
       lintersByFt = {
-        json = [ "jsonlint" ];
+        json = [ "biomejs" ];
       };
-
       linters = {
-        jsonlint = {
-          cmd = lib.getExe pkgs.nodePackages_latest.jsonlint;
+        biomejs = {
+          cmd = lib.getExe pkgs.biome;
         };
       };
     };
