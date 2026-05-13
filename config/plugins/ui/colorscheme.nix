@@ -1,5 +1,5 @@
 {
-  plugins.base16 = {
+  plugins.base16-nvim = {
     enable = true;
   };
 }
