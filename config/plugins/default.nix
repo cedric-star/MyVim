@@ -35,6 +35,7 @@
 
     ./ui/alpha.nix
     ./ui/bufferline.nix
+    ./ui/colorscheme.nix
     ./ui/general.nix
     ./ui/flash.nix
     ./ui/indent-blankline.nix
