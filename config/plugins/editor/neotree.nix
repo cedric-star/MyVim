@@ -36,6 +36,9 @@
 
       window.mappings = {
         "<space>" = "none";
+        "k" = "move_cursor_down";
+        "l" = "move_cursor_up";
+        "ö" = "open";
       };
     };
   };
