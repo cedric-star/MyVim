@@ -45,8 +45,8 @@
     { key = "$"; mode = "n"; action = "<Nop>"; options.noremap = true; }
     { key = "0"; mode = "n"; action = "<Nop>"; options.noremap = true; }
     { key = "^"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "G"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "gg"; mode = "n"; action = "<Nop>"; options.noremap = true; }
+    { key = "OOO"; mode = ["n" "v" "o"]; action = "G"; options.noremap = true; }
+    { key = "UUU"; mode = ["n" "v" "o"]; action = "gg"; options.noremap = true; }
     { key = "s"; mode = "n"; action = "<Nop>"; options.noremap = true; }
     { key = "/"; mode = "n"; action = "<Nop>"; options.noremap = true; }
     { key = "?"; mode = "n"; action = "<Nop>"; options.noremap = true; }
@@ -179,6 +179,15 @@
     }
     {
       mode = "n";
+      key = "<C-s>";
+      action = "<cmd>w<cr><esc>";
+      options = {
+        silent = true;
+        desc = "Save file";
+      };
+    }
+    {
+      mode = "i";
       key = "<C-s>";
       action = "<cmd>w<cr><esc>";
       options = {
