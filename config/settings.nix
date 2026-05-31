@@ -65,9 +65,6 @@
       grepprg = "rg --vimgrep";
       grepformat = "%f:%l:%c:%m";
 
-      # Better colors
-      termguicolors = true;
-
       # Decrease updatetime
       updatetime = 50; # faster completion (4000ms default)
 
