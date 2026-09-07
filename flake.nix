@@ -17,6 +17,51 @@
       self,
       ...
     }@inputs:
+    let
+      # Create the homeManagerModule outside of eachDefaultSystem
+      homeManagerModule =
+        {
+          config,
+          lib,
+          pkgs,
+          ...
+        }:
+        with lib;
+        let
+          cfg = config.programs.hellvim;
+
+          # IMPORTANT: Create our own pkgs from nixpkgs-unstable
+          # This ignores whatever pkgs the host system uses
+          unstablePkgs = import nixpkgs {
+            system = pkgs.system;
+            config.allowUnfree = true;
+          };
+
+          # Build nvim with unstable packages
+          nvim = nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
+            pkgs = unstablePkgs; # Use unstable pkgs here
+            module = import ./config;
+            extraSpecialArgs = {
+              inherit inputs self;
+            }
+            // import ./lib { pkgs = unstablePkgs; }; # Pass unstable pkgs to lib
+          };
+
+          # Create myvim wrapper script
+          myvim = unstablePkgs.writeShellScriptBin "myvim" ''
+            exec ${nvim}/bin/nvim "$@"
+          '';
+        in
+        {
+          options.programs.hellvim = {
+            enable = mkEnableOption "HellVim - NixVim configuration";
+          };
+
+          config = mkIf cfg.enable {
+            home.packages = [ nvim myvim ];
+          };
+        };
+    in
     flake-utils.lib.eachDefaultSystem (
       system:
       let
@@ -40,27 +85,6 @@
         myvim = pkgs.writeShellScriptBin "myvim" ''
           exec ${nvim}/bin/nvim "$@"
         '';
-
-        # Create the homeManagerModule INSIDE eachDefaultSystem
-        homeManagerModule =
-          {
-            config,
-            lib,
-            ...
-          }:
-          with lib;
-          let
-            cfg = config.programs.hellvim;
-          in
-          {
-            options.programs.hellvim = {
-              enable = mkEnableOption "HellVim - NixVim configuration";
-            };
-
-            config = mkIf cfg.enable {
-              home.packages = [ nvim myvim ];
-            };
-          };
       in
       {
         checks = {
@@ -83,8 +107,9 @@
             program = "${myvim}/bin/myvim";
           };
         };
-
-        homeManagerModules.default = homeManagerModule;
       }
-    );
+    )
+    // {
+      homeManagerModules.default = homeManagerModule;
+    };
 }
