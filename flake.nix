@@ -53,7 +53,7 @@
           };
 
           config = mkIf cfg.enable {
-            home.packages = [ nvim ];
+            home.packages = [ nvim myvim ];
           };
         };
     in
