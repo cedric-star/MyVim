@@ -75,13 +75,33 @@
           // import ./lib { inherit pkgs; };
         };
         nvim = nixvim'.makeNixvimWithModule nixvimModule;
+
+        # Create myvim wrapper script
+        myvim = pkgs.writeShellScriptBin "myvim" ''
+          exec ${nvim}/bin/nvim "$@"
+        '';
       in
       {
         checks = {
           default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
         };
 
-        packages.default = nvim;
+        packages = {
+          default = nvim;
+          nvim = nvim;
+          myvim = myvim;
+        };
+
+        apps = {
+          default = {
+            type = "app";
+            program = "${nvim}/bin/nvim";
+          };
+          myvim = {
+            type = "app";
+            program = "${myvim}/bin/myvim";
+          };
+        };
       }
     )
     // {
