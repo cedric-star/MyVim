@@ -27,8 +27,8 @@
         (padding 6)
         {
           type = "button";
-          val = "  Find File";
-          on_press.raw = "require('telescope.builtin').find_files";
+          val = "  Find File";
+          on_press.__raw = "function() require('telescope.builtin').find_files() end";  # GEÄNDERT
           opts = {
             keymap = [
               "n"
@@ -41,7 +41,6 @@
               }
             ];
             shortcut = "f";
-
             position = "center";
             cursor = 3;
             width = 40;
@@ -52,7 +51,7 @@
         (padding 1)
         {
           type = "button";
-          val = "  New File";
+          val = "  New File";
           on_press.__raw = "function() vim.cmd[[ene]] end";
           opts = {
             keymap = [
@@ -66,7 +65,6 @@
               }
             ];
             shortcut = "n";
-
             position = "center";
             cursor = 3;
             width = 40;
@@ -78,7 +76,7 @@
         {
           type = "button";
           val = "󰈚  Recent Files";
-          on_press.raw = "require('telescope.builtin').oldfiles";
+          on_press.__raw = "function() require('telescope.builtin').oldfiles() end";  # GEÄNDERT
           opts = {
             keymap = [
               "n"
@@ -91,7 +89,6 @@
               }
             ];
             shortcut = "r";
-
             position = "center";
             cursor = 3;
             width = 40;
@@ -103,7 +100,7 @@
         {
           type = "button";
           val = "󰈭  Find Word";
-          on_press.raw = "require('telescope.builtin').live_grep";
+          on_press.__raw = "function() require('telescope.builtin').live_grep() end";  # GEÄNDERT
           opts = {
             keymap = [
               "n"
@@ -116,7 +113,6 @@
               }
             ];
             shortcut = "g";
-
             position = "center";
             cursor = 3;
             width = 40;
@@ -127,8 +123,8 @@
         (padding 1)
         {
           type = "button";
-          val = "  Restore Session";
-          on_press.raw = "require('persistence').load()";
+          val = "  Restore Session";
+          on_press.__raw = "function() require('persistence').load() end";  # GEÄNDERT
           opts = {
             keymap = [
               "n"
@@ -141,7 +137,6 @@
               }
             ];
             shortcut = "s";
-
             position = "center";
             cursor = 3;
             width = 40;
@@ -152,7 +147,7 @@
         (padding 1)
         {
           type = "button";
-          val = "  Quit Neovim";
+          val = "  Quit Neovim";
           on_press.__raw = "function() vim.cmd[[qa]] end";
           opts = {
             keymap = [
@@ -166,7 +161,6 @@
               }
             ];
             shortcut = "q";
-
             position = "center";
             cursor = 3;
             width = 40;

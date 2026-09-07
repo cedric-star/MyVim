@@ -15,21 +15,20 @@
       })
     '';
 
-    # feature that enhances the way Neovim loads and executes Lua modules, 
+    # feature that enhances the way Neovim loads and executes Lua modules,
     # offering improved performance and flexibility.
     luaLoader.enable = true;
 
     clipboard.providers.wl-copy.enable = true;
 
-
     opts = {
-      virtualedit = "block"; # Allow cursor to move where there is no text in visual block mode
+      virtualedit = "block,onemore"; # Allow cursor to move where there is no text in visual block mode
       cursorline = true; # Highlight the line where the cursor is located
       cmdheight = 2; # more space in the neovim command line for displaying messages
       showmode = false; # Dont show the editor mode in status line
 
       clipboard = "unnamedplus";
-      
+
       # Enable relative line numbers
       number = true;
       relativenumber = true;
@@ -87,6 +86,7 @@
     };
 
     extraConfigLua = ''
+      vim.opt.virtualedit = "onemore"
       local opt = vim.opt
       local g = vim.g
       local o = vim.o

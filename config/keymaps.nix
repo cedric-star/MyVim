@@ -5,123 +5,597 @@
     # ==========================================
     # NAVIGATION (Colemak/Custom Layout)
     # ==========================================
-    { key = "j"; mode = ["n" "v" "o"]; action = "h"; options.noremap = true; }
-    { key = "ö"; mode = ["n" "v" "o"]; action = "l"; options.noremap = true; }
-    { key = "k"; mode = ["n" "v" "o"]; action = "j"; options.noremap = true; }
-    { key = "l"; mode = ["n" "v" "o"]; action = "k"; options.noremap = true; }
-
+    {
+      key = "j";
+      mode = [
+        "n"
+        "v"
+        "o"
+      ];
+      action = "h";
+      options.noremap = true;
+    }
+    {
+      key = "ö";
+      mode = [
+        "n"
+        "v"
+        "o"
+      ];
+      action = "l";
+      options.noremap = true;
+    }
+    {
+      key = "k";
+      mode = [
+        "n"
+        "v"
+        "o"
+      ];
+      action = "j";
+      options.noremap = true;
+    }
+    {
+      key = "l";
+      mode = [
+        "n"
+        "v"
+        "o"
+      ];
+      action = "k";
+      options.noremap = true;
+    }
+    # Springt ans Ende der angezeigten Zeile (bei wrap)
+    {
+      key = "<End>";
+      mode = [ "n" ];
+      action = "g$l";
+      options.noremap = true;
+    }
+    {
+      key = "<End>";
+      mode = [ "i" ];
+      action = "<C-o>g$l";
+      options.noremap = true;
+    }
+    {
+      key = "<End>";
+      mode = [ "v" ];
+      action = "g$l";
+      options.noremap = true;
+    }
     # ==========================================
     # MODUS-WECHSEL
     # ==========================================
-    { key = "nn"; mode = "i"; action = "<Esc>"; options.noremap = true; }
-    { key = "ii"; mode = "n"; action = "i"; options.noremap = true; }
-    { key = "m"; mode = "n"; action = "v"; options.noremap = true; }
+    {
+      key = "<CapsLock>";
+      mode = "i";
+      action = "<Esc>";
+      options.noremap = true;
+    }
+
+    {
+      key = "m";
+      mode = "n";
+      action = "v";
+      options.noremap = true;
+    }
 
     # ==========================================
     # CLIPBOARD-OPERATIONEN
     # ==========================================
-    { key = "c"; mode = ["n" "v"]; action = "y"; options.noremap = true; }
-    { key = "x"; mode = ["n" "v"]; action = "d"; options.noremap = true; }
-    { key = "v"; mode = ["n" "v"]; action = "p"; options.noremap = true; }
-    { key = "V"; mode = ["n" "v"]; action = "P"; options.noremap = true; }
+    {
+      key = "c";
+      mode = [
+        "n"
+        "v"
+      ];
+      action = "y";
+      options.noremap = true;
+    }
+    {
+      key = "x";
+      mode = [
+        "n"
+        "v"
+      ];
+      action = "d";
+      options.noremap = true;
+    }
+    {
+      key = "v";
+      mode = [
+        "n"
+        "v"
+      ];
+      action = "p";
+      options.noremap = true;
+    }
+    {
+      key = "V";
+      mode = [
+        "n"
+        "v"
+      ];
+      action = "P";
+      options.noremap = true;
+    }
 
     # ==========================================
     # UNDO/REDO
     # ==========================================
-    { key = "<C-z>"; mode = "n"; action = "u"; options.noremap = true; }
-    { key = "<C-z>"; mode = "i"; action = "<C-o>u"; options.noremap = true; }
-    { key = "<C-y>"; mode = "n"; action = "<C-r>"; options.noremap = true; }
-    { key = "<C-y>"; mode = "i"; action = "<C-o><C-r>"; options.noremap = true; }
+    {
+      key = "<C-z>";
+      mode = "n";
+      action = "u";
+      options.noremap = true;
+    }
+    {
+      key = "<C-z>";
+      mode = "i";
+      action = "<C-o>u";
+      options.noremap = true;
+    }
+    {
+      key = "<C-y>";
+      mode = "n";
+      action = "<C-r>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-y>";
+      mode = "i";
+      action = "<C-o><C-r>";
+      options.noremap = true;
+    }
 
     # ==========================================
     # NORMAL MODE - DEAKTIVIERTE TASTEN
     # ==========================================
-    { key = "h"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = ";"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = ","; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "w"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "b"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "e"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "$"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "0"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "^"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "OOO"; mode = ["n" "v" "o"]; action = "G"; options.noremap = true; }
-    { key = "UUU"; mode = ["n" "v" "o"]; action = "gg"; options.noremap = true; }
-    { key = "s"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "/"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "?"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "n"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "N"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "*"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "#"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "y"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "d"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "p"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "P"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "a"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "A"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "i"; mode = "n"; action = "<Nop>"; options.noremap = true; }  # Achtung: "ii" ist oben definiert!
-    { key = "I"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "o"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "O"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "u"; mode = "n"; action = "<Nop>"; options.noremap = true; }  # Achtung: <C-z> ist oben definiert!
-    { key = "<C-r>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "r"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "R"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-d>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-u>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-f>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-b>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-o>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-i>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F1>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F2>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F3>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F4>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F5>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F6>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F7>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F8>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F9>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F10>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F11>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
-    { key = "<F12>"; mode = "n"; action = "<Nop>"; options.noremap = true; }
+    {
+      key = "h";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = ";";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = ",";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "w";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "b";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "e";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "$";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "0";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "^";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "OOO";
+      mode = [
+        "n"
+        "v"
+        "o"
+      ];
+      action = "G";
+      options.noremap = true;
+    }
+    {
+      key = "UUU";
+      mode = [
+        "n"
+        "v"
+        "o"
+      ];
+      action = "gg";
+      options.noremap = true;
+    }
+    {
+      key = "s";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "/";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "?";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "n";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "N";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "*";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "#";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "y";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "d";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "p";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "P";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "a";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "A";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "i";
+      mode = "n";
+      action = "i";
+      options.noremap = true;
+    } 
+    {
+      key = "I";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "o";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "O";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "u";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    } # Achtung: <C-z> ist oben definiert!
+    {
+      key = "<C-r>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "r";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "R";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-d>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-u>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-f>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-b>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-o>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-i>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F1>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F2>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F3>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F4>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F5>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F6>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F7>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F8>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F9>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F10>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F11>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<F12>";
+      mode = "n";
+      action = "<Nop>";
+      options.noremap = true;
+    }
 
     # ==========================================
     # VISUAL MODE - DEAKTIVIERTE TASTEN
     # ==========================================
-    { key = "y"; mode = "v"; action = "<Nop>"; options.noremap = true; }
-    { key = "d"; mode = "v"; action = "<Nop>"; options.noremap = true; }
-    { key = "p"; mode = "v"; action = "<Nop>"; options.noremap = true; }
-    { key = "P"; mode = "v"; action = "<Nop>"; options.noremap = true; }
-    { key = "<"; mode = "v"; action = "<Nop>"; options.noremap = true; }
-    { key = ">"; mode = "v"; action = "<Nop>"; options.noremap = true; }
+    {
+      key = "y";
+      mode = "v";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "d";
+      mode = "v";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "p";
+      mode = "v";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "P";
+      mode = "v";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<";
+      mode = "v";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = ">";
+      mode = "v";
+      action = "<Nop>";
+      options.noremap = true;
+    }
 
     # ==========================================
     # INSERT MODE - DEAKTIVIERTE TASTEN
     # ==========================================
-    { key = "<C-c>"; mode = "i"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-[>"; mode = "i"; action = "<Nop>"; options.noremap = true; }
-    { key = "<Home>"; mode = "i"; action = "<Nop>"; options.noremap = true; }
-    { key = "<End>"; mode = "i"; action = "<Nop>"; options.noremap = true; }
+    {
+      key = "<C-c>";
+      mode = "i";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-[>";
+      mode = "i";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<Home>";
+      mode = "i";
+      action = "<C-o>^";
+      options.noremap = true;
+    }
+    {
+      key = "<End>";
+      mode = "i";
+      action = "<C-o>$";
+      options.noremap = true;
+    }
 
     # ==========================================
     # OPERATOR-PENDING MODE - DEAKTIVIERTE TASTEN
     # ==========================================
-    { key = "aw"; mode = "o"; action = "<Nop>"; options.noremap = true; }
-    { key = "iw"; mode = "o"; action = "<Nop>"; options.noremap = true; }
-    { key = "a\""; mode = "o"; action = "<Nop>"; options.noremap = true; }
-    { key = "i\""; mode = "o"; action = "<Nop>"; options.noremap = true; }
-    { key = "a'"; mode = "o"; action = "<Nop>"; options.noremap = true; }
-    { key = "i'"; mode = "o"; action = "<Nop>"; options.noremap = true; }
+    {
+      key = "aw";
+      mode = "o";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "iw";
+      mode = "o";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "a\"";
+      mode = "o";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "i\"";
+      mode = "o";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "a'";
+      mode = "o";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "i'";
+      mode = "o";
+      action = "<Nop>";
+      options.noremap = true;
+    }
 
     # ==========================================
     # COMMAND MODE - DEAKTIVIERTE TASTEN
     # ==========================================
-    { key = "<C-a>"; mode = "c"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-e>"; mode = "c"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-f>"; mode = "c"; action = "<Nop>"; options.noremap = true; }
-    { key = "<C-b>"; mode = "c"; action = "<Nop>"; options.noremap = true; }
+    {
+      key = "<C-a>";
+      mode = "c";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-e>";
+      mode = "c";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-f>";
+      mode = "c";
+      action = "<Nop>";
+      options.noremap = true;
+    }
+    {
+      key = "<C-b>";
+      mode = "c";
+      action = "<Nop>";
+      options.noremap = true;
+    }
 
     # ==========================================
     # WINDOWS
@@ -287,7 +761,10 @@
 
     # Clear search with ESC
     {
-      mode = ["n" "i"];
+      mode = [
+        "n"
+        "i"
+      ];
       key = "<esc>";
       action = "<cmd>noh<cr><esc>";
       options = {
@@ -307,7 +784,10 @@
 
     # Copy stuff to system clipboard
     {
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>y";
       action = "\"+y";
       options.desc = "Copy to system clipboard";
@@ -315,7 +795,10 @@
 
     # Delete to void register
     {
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>D";
       action = "\"_d";
       options.desc = "Delete to void register";
