@@ -3,6 +3,7 @@
   plugins.neo-tree = {
     enable = true;
     settings = {
+      log_level = "error"; 
       closeIfLastWindow = true;
       sources = [
         "filesystem"
@@ -10,7 +11,7 @@
         "git_status"
         "document_symbols"
       ];
-      popupBorderStyle = "rounded"; # “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+      popupBorderStyle = "rounded";
 
       filesystem = {
         bindToCwd = false;
@@ -34,11 +35,15 @@
         };
       };
 
-      window.mappings = {
-        "<space>" = "none";
-        "k" = "move_cursor_down";
-        "l" = "move_cursor_up";
-        "ö" = "open";
+      window = {
+        mappings = {
+          "<space>" = "none";
+          "k" = "move_cursor_down";
+          "l" = "move_cursor_up";
+          "j" = "none";
+          "o" = "none";
+          "ö" = "open";
+        };
       };
     };
   };
