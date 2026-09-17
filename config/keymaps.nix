@@ -64,6 +64,25 @@
       action = "g$l";
       options.noremap = true;
     }
+    # wörter nach links und rechts springen
+    {
+      key = "g";
+      mode = [
+        "n"
+        "v"
+      ];
+      action = "b";
+      options.noremap = true;
+    }
+    {
+      key = "h";
+      mode = [
+        "n"
+        "v"
+      ];
+      action = "w";
+      options.noremap = true;
+    }
     # ==========================================
     # MODUS-WECHSEL
     # ==========================================
@@ -152,12 +171,6 @@
     # ==========================================
     # NORMAL MODE - DEAKTIVIERTE TASTEN
     # ==========================================
-    {
-      key = "h";
-      mode = "n";
-      action = "<Nop>";
-      options.noremap = true;
-    }
     {
       key = ";";
       mode = "n";
